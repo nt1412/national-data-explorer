@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.DS_Store
+.playwright-mcp/
+# regenerable: raw sources (fetch_data.sh) and build outputs (build.py)
+data/raw/
+data/out/
+# web/data/*.json + *.topo.json ARE committed — they are the shipped static artifacts

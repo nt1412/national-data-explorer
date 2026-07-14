@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>India Health & Living Conditions — NFHS-4 → NFHS-5 District Explorer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="head-main">
+    <p class="eyebrow">National Data Explorer · India · NFHS Health · <a href="roadsafety/index.html">Road Safety ↗</a></p>
+    <h1>How district health &amp; living conditions changed, NFHS-4 → NFHS-5</h1>
+    <p class="sub">Two national surveys, <b>2015–16</b> vs <b>2019–21</b>, across <b id="ndist">—</b> comparable districts. Green = improved, brown = worsened — always, whichever way the raw number moved.</p>
+  </div>
+  <button id="themeBtn" class="theme-btn" type="button" aria-label="Toggle colour theme">◐</button>
+</header>
+
+<div class="controls" role="group" aria-label="Map controls">
+  <label class="ctl">
+    <span>Indicator</span>
+    <select id="indicatorSel"></select>
+  </label>
+  <div class="ctl seg" role="radiogroup" aria-label="View">
+    <span>View</span>
+    <div class="seg-btns">
+      <button data-view="change" class="active" role="radio" aria-checked="true">Change</button>
+      <button data-view="nfhs4" role="radio" aria-checked="false">2015–16</button>
+      <button data-view="nfhs5" role="radio" aria-checked="false">2019–21</button>
+    </div>
+  </div>
+  <label class="ctl grow">
+    <span>Find a district</span>
+    <input id="districtSearch" list="districtList" placeholder="e.g. Bahraich" autocomplete="off">
+    <datalist id="districtList"></datalist>
+  </label>
+  <div class="ctl seg" role="group" aria-label="Maharashtra infrastructure overlay">
+    <span>MH infra (OSM)</span>
+    <div class="seg-btns" id="overlaySeg">
+      <button data-layer="industrial" type="button" aria-pressed="false">Industrial</button>
+      <button data-layer="malls" type="button" aria-pressed="false">Malls</button>
+      <button data-layer="airports" type="button" aria-pressed="false">Airports</button>
+    </div>
+  </div>
+  <button id="tableBtn" class="link-btn" type="button" aria-pressed="false">Table view</button>
+</div>
+
+<main class="layout">
+  <section class="mapcard">
+    <div class="mapwrap">
+      <svg id="map" role="img" aria-label="District choropleth map of India"></svg>
+      <div id="tooltip" class="tooltip" hidden></div>
+    </div>
+    <div id="legend" class="legend" aria-hidden="true"></div>
+    <div id="overlayNote" class="overlay-note" hidden></div>
+  </section>
+
+  <aside id="panel" class="panel" aria-live="polite">
+    <div class="panel-empty">Hover a district for a quick read; click (or search) to pin its full NFHS-4 → NFHS-5 card here.</div>
+  </aside>
+</main>
+
+<section id="tableview" class="tableview" hidden aria-label="District data table"></section>
+
+<footer class="site-foot">
+  <p><b>How to read the Change view.</b> Colour shows <i>improvement</i>, not the raw direction: an indicator like child anaemia is scored so that a <i>fall</i> is green. Grey districts had no 2015-boundary baseline (created after the 2011 Census) — shown, never guessed.</p>
+  <p class="attrib">Data: IIPS/MoHFW — NFHS-4 (2015–16) &amp; NFHS-5 (2019–21), district factsheets. Boundaries: DataMeet (Census 2011), CC-BY. Comparable districts only; mortality/fertility rates are state-level in NFHS and omitted here.</p>
+</footer>
+
+<script src="vendor/d3.v7.min.js"></script>
+<script src="vendor/topojson-client.min.js"></script>
+<script src="shared/overlay.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
