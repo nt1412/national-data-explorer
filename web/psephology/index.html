@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The 2024 Verdict in Numbers — an AI psephologist's findings</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<article class="wrap">
+  <header class="masthead">
+    <p class="eyebrow"><a href="../index.html">National Data Explorer</a> · India · Psephology</p>
+    <h1>The 2024 verdict, in the numbers the headline misses</h1>
+    <p class="byline">Field notes from an <b>automated psephologist</b> — every figure below is computed from the Election Commission's official candidate-level count (<span id="nseats">—</span> seats, <span id="ncand">—</span> candidates). Nothing is asserted that the data can't support; the methodology and its limits are stated at the end.</p>
+    <button id="themeBtn" class="theme-btn" type="button" aria-label="Toggle theme">◐</button>
+  </header>
+
+  <section class="thesis">
+    <div class="stat"><div class="v"><span id="t-nda-s">—</span></div><div class="l">NDA seats</div><div class="s">on <span id="t-nda-v">—</span>% of votes</div></div>
+    <div class="stat"><div class="v"><span id="t-ind-s">—</span></div><div class="l">INDIA seats</div><div class="s">on <span id="t-ind-v">—</span>% of votes</div></div>
+    <div class="stat"><div class="v"><span id="t-oth-s">—</span></div><div class="l">Others' seats</div><div class="s">on <span id="t-oth-v">—</span>% of votes</div></div>
+    <p class="thesis-note">A <b><span id="votegap">—</span>-point</b> gap in vote share between the two blocs became a <b><span id="seatgap">—</span>-seat</b> gap in Parliament. That translation — votes into seats — is where 2024's real story lives.</p>
+  </section>
+
+  <section class="finding">
+    <h2>1 · A knife-edge Parliament</h2>
+    <p>Nearly half of India's seats were genuine contests. <b><span id="u10">—</span> of <span id="nseats2">—</span> seats</b> were decided by under 10 points, <b><span id="u5">—</span></b> by under 5, and <b><span id="u1">—</span></b> by under one point. <b><span id="u1000">—</span></b> seats turned on fewer than 1,000 votes — and the tightest, <b id="closest-name">—</b>, was won by <b><span id="closest-m">—</span> votes</b>.</p>
+    <div class="bars" id="marginBars"></div>
+    <table class="tbl" id="closestTbl"></table>
+  </section>
+
+  <section class="finding">
+    <h2>2 · Votes are not seats</h2>
+    <p>First-past-the-post rewards concentration and punishes spread. The unaligned "Others" — regional heavyweights like the YSRCP and BJD among them — took <b><span id="d-oth-v">—</span>% of the national vote</b> but only <b><span id="d-oth-s">—</span>% of the seats</b>. The two big blocs were separated by under two points of vote share. The overall Gallagher disproportionality index was <b><span id="gall">—</span></b>.</p>
+    <table class="tbl" id="dispropTbl"></table>
+  </section>
+
+  <section class="finding">
+    <h2>3 · NOTA, the phantom candidate</h2>
+    <p>"None of the Above" drew <b><span id="nota-tot">—</span> votes</b> (<span id="nota-pct">—</span>% of the total). In <b><span id="nota-gt">—</span> seats it exceeded the winning margin</b> — meaning a formal "reject all" option out-polled the gap between victory and defeat. Its high-water mark, <b id="indore">—</b>, is the starkest protest vote in the count.</p>
+    <table class="tbl" id="notaTbl"></table>
+  </section>
+
+  <section class="finding">
+    <h2>4 · The deposit graveyard</h2>
+    <p>A candidate who wins under one-sixth of the vote forfeits their deposit. In 2024 <b><span id="ff-pct">—</span>% of all candidates</b> (<span id="ff-n">—</span> of <span id="ncand3">—</span>) did so — and among independents, <b><span id="ff-ind">—</span>%</b>. The sprawling ballots (one seat had <span id="maxc">—</span> names) are overwhelmingly noise: the real contest is almost always a two- or three-way fight.</p>
+    <table class="tbl" id="ffTbl"></table>
+  </section>
+
+  <section class="finding">
+    <h2>5 · When the postal ballot decided it</h2>
+    <p>Postal votes — from service voters, the elderly, and poll staff — are counted first and often ignored. In <b><span id="postal-n">—</span> seats the victory margin was smaller than the postal votes cast</b>, meaning that quiet, early-counted pile was mathematically decisive.</p>
+    <table class="tbl" id="postalTbl"></table>
+  </section>
+
+  <section class="finding">
+    <h2>6 · The shape of the fight</h2>
+    <p>The contest was overwhelmingly bipolar where it mattered, but not everywhere. The head-to-head map:</p>
+    <div class="bars" id="matchupBars"></div>
+    <p class="aside">Note the <b id="friendly">—</b> seats where INDIA-bloc parties beat each other — "friendly fights" the alliance never resolved.</p>
+  </section>
+
+  <footer class="method">
+    <h3>Method &amp; honest limits</h3>
+    <ul id="caveats"></ul>
+    <p class="src">Data: Election Commission of India, 2024 General Election candidate-level results, via opencity.in (CKAN). Analysis computed by the National Data Explorer; figures are reproducible from <code>scripts/analyze_elections.py</code>. This is descriptive psephology — it reports what the count says, not why voters chose it.</p>
+  </footer>
+</article>
+<script src="app.js"></script>
+</body>
+</html>

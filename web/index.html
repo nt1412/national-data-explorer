@@ -50,6 +50,8 @@
   .card::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--accent)}
   .card.c-road::before{background:var(--del)} .card.c-infra::before{background:#7a5195}
   .card.c-mh::before{background:var(--new)} .card.c-gst::before{background:var(--mod)}
+  .card.c-pseph::before{background:#5a5fb0}
+  .card.c-pseph{border-color:color-mix(in srgb,#5a5fb0 30%,var(--border))}
   .card .kicker{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.04em}
   .card h2{font-size:18px;margin:6px 0 0;letter-spacing:-.01em}
   .card p{font-size:13.5px;color:var(--muted);margin:8px 0 0;flex:1}
@@ -86,13 +88,20 @@
   <section class="hero">
     <p class="eyebrow">One engine · many datasets · any country</p>
     <h1>Public data you can actually trust on a map.</h1>
-    <p class="lede">Choropleths, multi-year trends, and geodata overlays built from
+    <p class="lede">Choropleths, multi-year trends, geodata overlays, and <b>computed findings</b> built from
       <b>government open data</b> — with the honesty baked in: joins on codes not names,
       no imputed values, polarity- and unit-aware change, colourblind-safe, sources cited.
       India is the first country wired up; <b>the engine maps any boundary set.</b></p>
   </section>
 
   <div class="cards">
+    <a class="card c-pseph" href="psephology/index.html">
+      <span class="kicker">FINDINGS · PSEPHOLOGY</span>
+      <h2>The 2024 Verdict, in Numbers</h2>
+      <p>An automated psephologist's read of the Lok Sabha 2024 count: a knife-edge Parliament (257 seats under 10 points), NOTA beating the winning margin in 20 seats, 86% of candidates losing their deposit.</p>
+      <div class="honest"><b>Honest by design:</b> every figure computed from the official candidate-level count; alliance mapping stated, no causal claims.</div>
+      <span class="go">Read the findings →</span>
+    </a>
     <a class="card c-health" href="nfhs/index.html">
       <span class="kicker">DATASET 01 · HEALTH</span>
       <h2>NFHS Health &amp; Living Conditions</h2>

@@ -12,6 +12,7 @@ roadmap is to extend worldwide (any admin-boundary source + open dataset drops i
 - **Industrial & Infrastructure** — Maharashtra geodata overlay (OSM industrial/malls + airports), toggleable on both maps. Spec: [`spec-infra.md`](spec-infra.md).
 - **Maharashtra: Industry vs Health** (`web/mh-industry/`) — district scatter of establishments/lakh (Economic Census 2013) against NFHS-5 child stunting (r ≈ −0.5, descriptive). Spec: [`spec-mhindustry.md`](spec-mhindustry.md).
 - **GST: Producers vs Consumers** (`web/gst/`) — net producer/consumer states from IGST settlement (pre- vs post-settlement SGST), FY 2024-25. Spec: [`spec-gst.md`](spec-gst.md).
+- **Psephology — the 2024 Verdict in Numbers** (`web/psephology/`) — an automated psephologist's findings from the Lok Sabha 2024 candidate-level count (margins, NOTA vs margin, disproportionality, deposit forfeitures, postal decisiveness). Analysis, not a map — computed by `scripts/analyze_elections.py` into `findings.json` and rendered as a data-driven article.
 
 Static, client-side, zero-backend — deployable to any static host. The section below documents
 the first dataset (NFHS) in detail; the other two follow the same engine.
