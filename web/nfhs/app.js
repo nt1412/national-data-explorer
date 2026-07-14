@@ -43,7 +43,7 @@
     initControls();
     initMap();
     render();
-    InfraOverlay.init(svg, projection, "shared/data/mh_infra.json", { segSelector: "#overlaySeg", noteId: "overlayNote" });
+    InfraOverlay.init(svg, projection, "../shared/data/mh_infra.json", { segSelector: "#overlaySeg", noteId: "overlayNote" });
   }).catch(function (e) {
     document.querySelector(".mapcard").innerHTML =
       '<p style="padding:24px;color:var(--muted)">Could not load data files. Run <code>python scripts/build.py</code> and the boundary prep first.</p>';

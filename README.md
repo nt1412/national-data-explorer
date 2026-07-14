@@ -7,7 +7,7 @@ the same engine maps any boundary set; **India is just the first country wired u
 roadmap is to extend worldwide (any admin-boundary source + open dataset drops in).
 
 **Datasets live today (India):**
-- **NFHS Health** (`web/`) — district health & living conditions, NFHS-4 (2015–16) → NFHS-5 (2019–21). Spec: [`spec.md`](spec.md).
+- **NFHS Health** (`web/nfhs/`) — district health & living conditions, NFHS-4 (2015–16) → NFHS-5 (2019–21). Spec: [`spec.md`](spec.md).
 - **Road Safety** (`web/roadsafety/`) — MoRTH state & city crash trends, 2019–2024. Spec: [`spec-roadsafety.md`](spec-roadsafety.md).
 - **Industrial & Infrastructure** — Maharashtra geodata overlay (OSM industrial/malls + airports), toggleable on both maps. Spec: [`spec-infra.md`](spec-infra.md).
 
@@ -49,9 +49,11 @@ bash scripts/fetch_data.sh        # download NFHS CSVs + DataMeet shapefile → 
 python scripts/build.py           # ingest + join check + district_change + web JSON
 bash scripts/boundary_prep.sh     # shapefile → simplified TopoJSON (needs Node/npx)
 python scripts/test_change.py     # unit tests for the change/polarity logic
-cd web && python -m http.server 8795   # open http://localhost:8795
+cd web && python -m http.server 8795   # landing → http://localhost:8795/  · NFHS → /nfhs/
 ```
-Deploy: the `web/` folder is fully static — push to GitHub Pages / Netlify / S3 as-is.
+Deploy: the `web/` folder is fully static (landing page + `nfhs/`, `roadsafety/`, shared
+`vendor/` & `shared/`) — push to GitHub Pages / Netlify / S3 as-is. All paths are relative,
+so it works under any base path (e.g. `user.github.io/national-data-explorer/`).
 
 ## Layout
 ```

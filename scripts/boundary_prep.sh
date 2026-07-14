@@ -6,8 +6,8 @@ cd "$(dirname "$0")/.."
 npx -y mapshaper data/raw/boundaries/India-Districts-2011Census.shp \
   -filter-fields censuscode,DISTRICT,ST_NM \
   -simplify 8% keep-shapes \
-  -o format=topojson web/data/districts.topo.json
-echo "Wrote web/data/districts.topo.json"
+  -o format=topojson web/nfhs/data/districts.topo.json
+echo "Wrote web/nfhs/data/districts.topo.json"
 
 # States layer for the road-safety explorer (keyed on ST_NM — the states file has no code).
 if [ -f data/raw/boundaries/India-States.shp ]; then

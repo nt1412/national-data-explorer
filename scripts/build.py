@@ -37,7 +37,7 @@ def main():
     summary = store.build(data, source_name="India.csv (SaiSiddhardhaKalla, rchiips-derived)")
     print(f"districts={summary['n_districts']}  observations={summary['n_obs']}  "
           f"change_cells={summary['n_cells']}")
-    print("wrote: data/out/*.parquet, data/out/nfhs.duckdb, web/data/district_change.json")
+    print("wrote: data/out/*.parquet, data/out/nfhs.duckdb, web/nfhs/data/district_change.json")
 
 
 if __name__ == "__main__":

@@ -11,7 +11,7 @@ from .change import change_value, improved
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 OUT = os.path.join(ROOT, "data", "out")
-WEB_DATA = os.path.join(ROOT, "web", "data")
+WEB_DATA = os.path.join(ROOT, "web", "nfhs", "data")
 
 
 def build(adapter_output, source_name):
