@@ -49,6 +49,7 @@
   @media (prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
   .card::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--accent)}
   .card.c-road::before{background:var(--del)} .card.c-infra::before{background:#7a5195}
+  .card.c-mh::before{background:var(--new)} .card.c-gst::before{background:var(--mod)}
   .card .kicker{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.04em}
   .card h2{font-size:18px;margin:6px 0 0;letter-spacing:-.01em}
   .card p{font-size:13.5px;color:var(--muted);margin:8px 0 0;flex:1}
@@ -114,6 +115,22 @@
       <p>Maharashtra industrial areas, malls and airports (OpenStreetMap + OurAirports) — a <b>toggleable overlay</b> on both maps above, not a standalone view.</p>
       <div class="honest"><b>Honest by design:</b> mapped <i>locations</i>, not economic intensity — OSM coverage is metro-biased, and we say so.</div>
       <span class="go">Toggle it on either map →</span>
+    </a>
+
+    <a class="card c-mh" href="mh-industry/index.html">
+      <span class="kicker">DATASET 04 · ECONOMY</span>
+      <h2>Maharashtra: Industry vs Health</h2>
+      <p>Do more-industrial districts have healthier children? A scatter across 34 Maharashtra districts — establishments per lakh (Economic Census 2013) against NFHS-5 child stunting.</p>
+      <div class="honest"><b>Honest by design:</b> descriptive, not graded — a single-state 34-district slice showing correlation (r ≈ −0.5), never causation.</div>
+      <span class="go">Open the scatter →</span>
+    </a>
+
+    <a class="card c-gst" href="gst/index.html">
+      <span class="kicker">DATASET 05 · FISCAL</span>
+      <h2>GST: Producers vs Consumers</h2>
+      <p>Which states produce and which consume — read from GST's IGST settlement (pre- vs post-settlement SGST). Net producers vs net consumers, FY 2024-25.</p>
+      <div class="honest"><b>Honest by design:</b> collections are credited where tax is <i>remitted</i>, so HQ states are over-credited — surfaced, not hidden.</div>
+      <span class="go">Open the GST map →</span>
     </a>
   </div>
 

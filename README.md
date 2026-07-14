@@ -10,6 +10,8 @@ roadmap is to extend worldwide (any admin-boundary source + open dataset drops i
 - **NFHS Health** (`web/nfhs/`) — district health & living conditions, NFHS-4 (2015–16) → NFHS-5 (2019–21). Spec: [`spec.md`](spec.md).
 - **Road Safety** (`web/roadsafety/`) — MoRTH state & city crash trends, 2019–2024. Spec: [`spec-roadsafety.md`](spec-roadsafety.md).
 - **Industrial & Infrastructure** — Maharashtra geodata overlay (OSM industrial/malls + airports), toggleable on both maps. Spec: [`spec-infra.md`](spec-infra.md).
+- **Maharashtra: Industry vs Health** (`web/mh-industry/`) — district scatter of establishments/lakh (Economic Census 2013) against NFHS-5 child stunting (r ≈ −0.5, descriptive). Spec: [`spec-mhindustry.md`](spec-mhindustry.md).
+- **GST: Producers vs Consumers** (`web/gst/`) — net producer/consumer states from IGST settlement (pre- vs post-settlement SGST), FY 2024-25. Spec: [`spec-gst.md`](spec-gst.md).
 
 Static, client-side, zero-backend — deployable to any static host. The section below documents
 the first dataset (NFHS) in detail; the other two follow the same engine.

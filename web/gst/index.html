@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>India GST — which states produce, which consume</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="head-main">
+    <p class="eyebrow"><a href="../index.html">National Data Explorer</a> · India · GST Consumption Flows</p>
+    <h1>Which states <i>produce</i> — and which <i>consume</i></h1>
+    <p class="sub">GST is a <b>destination</b> tax, so the IGST settlement reveals it: a state's
+      <b>post-settlement</b> SGST (what accrues after goods made elsewhere are consumed there) vs its
+      <b>pre-settlement</b> SGST (tax on its own output). High ratio = <b>net consumer</b>; low = <b>net producer</b>. FY 2024-25.</p>
+  </div>
+  <button id="themeBtn" class="theme-btn" type="button" aria-label="Toggle colour theme">◐</button>
+</header>
+
+<div class="controls" role="group" aria-label="Map controls">
+  <label class="ctl grow"><span>Metric</span>
+    <select id="metricSel"></select>
+  </label>
+  <div class="ctl"><span>Metric meaning</span>
+    <div id="metricDesc" style="font-weight:400;color:var(--muted);font-size:12px;max-width:44ch;line-height:1.45"></div>
+  </div>
+</div>
+
+<main class="layout">
+  <section class="mapcard" id="mapcard">
+    <div class="mapwrap">
+      <svg id="map" role="img" aria-label="State choropleth of India GST metric"></svg>
+      <div id="tooltip" class="tooltip" hidden></div>
+    </div>
+    <div id="legend" class="legend" aria-hidden="true"></div>
+  </section>
+
+  <aside id="panel" class="panel" aria-live="polite">
+    <div class="panel-empty">Click (or search) a state to see its producer/consumer profile and the full SGST settlement numbers.</div>
+  </aside>
+</main>
+
+<footer class="site-foot">
+  <p><b>Read it right.</b> This is descriptive economic geography, not a league table — colour is
+    the producer↔consumer axis, not good/bad. <b>Remittance geography ≠ where activity happened:</b>
+    large firms register at their HQ, so Maharashtra, Karnataka and Delhi are over-credited on own-SGST
+    relative to where production or consumption physically occurred. That is the single biggest caveat.</p>
+  <p id="notes" class="attrib"></p>
+  <p class="attrib">Data: Ministry of Finance / GSTN — approved monthly GST data (Table 2, SGST settlement), FY 2024-25.
+    Boundaries: DataMeet, CC-BY. Per-capita uses Census-2011 population (approximate). Settlement is fiscal-year cumulative, not monthly.</p>
+</footer>
+
+<script src="../vendor/d3.v7.min.js"></script>
+<script src="../vendor/topojson-client.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

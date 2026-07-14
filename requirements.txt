@@ -1,4 +1,5 @@
 duckdb>=1.0
 pandas>=2.0
 pyarrow>=14
+pdfplumber>=0.11   # GST adapter: parse the GSTN monthly settlement PDF (Table 2)
 # Boundary prep uses mapshaper via npx (Node.js) — not a Python dep.

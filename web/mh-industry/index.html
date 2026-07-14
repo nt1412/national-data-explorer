@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maharashtra Industry vs Child Health — district scatter</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="head-main">
+    <p class="eyebrow"><a href="../index.html">National Data Explorer</a> · India · Maharashtra Industry</p>
+    <h1>Do more-industrial districts have healthier children?</h1>
+    <p class="sub">Across <b id="ndist">—</b> Maharashtra districts: industrial intensity (x) against child stunting (y, NFHS-5). One dot per district — the shape of the cloud answers the question honestly, without pretending 35 districts are a nation.</p>
+  </div>
+  <button id="themeBtn" class="theme-btn" type="button" aria-label="Toggle colour theme">◐</button>
+</header>
+
+<div class="controls" role="group" aria-label="Scatter controls">
+  <label class="ctl"><span>Industry metric (x-axis)</span>
+    <select id="xSel"></select>
+  </label>
+  <div class="corr" id="corr"></div>
+</div>
+
+<main class="layout">
+  <section class="card scattercard">
+    <div class="scatterwrap">
+      <svg id="scatter" role="img" aria-label="Scatter of industrial intensity vs child stunting across Maharashtra districts"></svg>
+      <div id="tooltip" class="tooltip" hidden></div>
+    </div>
+  </section>
+
+  <section class="card tablecard" aria-label="District table">
+    <h3>Districts</h3>
+    <div class="tablewrap"><table id="tbl"><thead><tr id="thead"></tr></thead><tbody id="tbody"></tbody></table></div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <p><b>How to read it.</b> A downward-sloping cloud means more-industrial districts tend to have <i>less</i> child stunting; a shapeless cloud means no relationship. The line is a simple linear fit; <b>r</b> is the correlation (−1…+1). This is <b>descriptive</b>, not causal, and not graded good/bad.</p>
+  <p id="attrib" class="attrib"></p>
+</footer>
+
+<script src="../vendor/d3.v7.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
